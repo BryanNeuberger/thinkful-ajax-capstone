@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title></title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body aria-live='assertive'>
+  <nav role="Navigation">
+    <h3 for="search">NitWit GIPHY Search</h3>
+  	<form action="#">
+      <div class="input-wrap">
+  		<input role="Search" type="text" name="search" id="input-search" placeholder="Search for Memes" required="true">
+  		<button type="submit" id="btn-search" class="nav-btn" data-tip="Press to search text">Search</button>
+    </div>
+  	</form>
+    <button id="btn-filter" class="nav-btn" data-tip="Press to open filter menu">Filter Options</button>
+  </nav>
+  <i class="material-icons md-48 ani-play">arrow_upward</i>
+  <h1 class="search-header">What GIFY's would you like to search?</h1>
+  <section role="Region" class="section-meme-results" id="section-meme-results">
+    
+  </section>
+	<!-- Load body scripts -->
+	<script type="text/javascript" src="scripts.js"></script>
+  <div id="filter-menu" class="menu-filter menu-hide">
+    <div class="menu-row">
+      <p>Rating:</p>
+      <input name="rating" type="radio" id="r-g" value="G" class="input-rating"/>
+      <label for="r-g">G</label>
+      <input name="rating" type="radio" id="r-pg" value="PG" class="input-rating"/>
+      <label for="r-pg">PG</label>
+      <input name="rating" type="radio" id="r-pg13" checked="true" value="PG-13" class="input-rating"/>
+      <label for="r-pg13">PG-13</label>      
+    </div>
+    <div class="menu-row">
+      <p>Max-Results:</p>
+      <label for="range-results" id="range-label">10</label>
+      <input type="range" id="range-results" min="5" max="100" step="5" value="10" oninput="updateRange(this.value)">
+    </div>
+  </div>
+  <button id="btn-backToTop" class="nav-btn">Back To Top</button>
+</body>
+</html>
